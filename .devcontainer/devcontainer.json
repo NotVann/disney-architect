@@ -1,0 +1,9 @@
+{
+  "name": "Disney Architect Sandbox",
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/devcontainers/features/go:1": {}
+  },
+  "postCreateCommand": "python3 scripts/critic_linter.py . && python3 scripts/install_harness.py ."
+}

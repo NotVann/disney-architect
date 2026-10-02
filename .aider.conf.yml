@@ -1,0 +1,5 @@
+# Aider CLI Configuration
+read:
+  - CONVENTIONS.md
+auto-commits: false
+stream: true

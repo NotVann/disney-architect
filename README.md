@@ -3,7 +3,8 @@
 [![CI](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://python.org)
-[![Agents Supported](https://img.shields.io/badge/Agents-Antigravity%20%7C%20Claude%20%7C%20Cursor%20%7C%20Cline%20%7C%20Aider-orange?style=flat-square)](#)
+[![MCP Server](https://img.shields.io/badge/MCP-Compatible-purple?style=flat-square)](#)
+[![Agents Supported](https://img.shields.io/badge/Agents-Antigravity%20%7C%20Claude%20%7C%20Cursor%20%7C%20Copilot%20%7C%20Zed%20%7C%20Cline%20%7C%20Aider-orange?style=flat-square)](#)
 
 A polyglot, multi-stage software architecture and scaffolding framework for AI coding assistants, implementing the **Disney Creative Strategy** (Robert Dilts) to bridge high-leverage product vision, pragmatic technical architecture, and adversarial reliability auditing.
 
@@ -49,6 +50,42 @@ A polyglot, multi-stage software architecture and scaffolding framework for AI c
 
 ---
 
+## Ecosystem Support Matrix
+
+| Category | Agents & Clients | Integration Mechanism |
+| :--- | :--- | :--- |
+| **CLI Agents** | Google Antigravity, Claude Code, Aider, OpenHands | `.agents/`, `CLAUDE.md`, `.aider.conf.yml`, `.openhands_instructions` |
+| **IDE Extensions** | Cursor, Windsurf, Cline / Roo Code, GitHub Copilot, Continue.dev | `.cursor/rules/`, `.windsurfrules`, `.clinerules`, `.github/copilot-instructions.md`, `.prompts/` |
+| **MCP Clients** | Claude Desktop, Zed Editor, Sourcegraph Cody | Native JSON-RPC stdio MCP Server (`scripts/mcp_server.py`) |
+| **Open Standards** | Autonomous Frameworks, SWE-agent | `AGENTS.md` |
+| **Sandboxes** | Devin, GitHub Codespaces | `.devcontainer/devcontainer.json` |
+
+---
+
+## Quick Start: Universal Installation
+
+Run the universal installer to mount the skill across your active agent environments in one command:
+
+```bash
+python scripts/install_harness.py .
+```
+
+### MCP Server Setup (Claude Desktop & Zed Editor)
+Add this entry to your `claude_desktop_config.json` or Zed `settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "disney-architect": {
+      "command": "python",
+      "args": ["<absolute-path-to-disney-architect>/scripts/mcp_server.py"]
+    }
+  }
+}
+```
+
+---
+
 ## Key Capabilities
 
 - **Zero-Hallucination Gatekeeper**: Enforces deterministic AST parsing (`python scripts/critic_linter.py`) before code authorization. Broken syntax automatically caps the audit score at `0/100`.
@@ -68,34 +105,22 @@ A polyglot, multi-stage software architecture and scaffolding framework for AI c
 
 ---
 
-## Quick Start: Multi-Agent Installation
-
-Run the universal installer to mount the skill across your active agent environments in one command:
-
-```bash
-# Install to current workspace and global agent configuration
-python scripts/install_harness.py .
-```
-
-### Supported Environments
-- **Google Antigravity**: Mounted in `~/.gemini/config/skills/disney-architect` and `.agents/skills/`.
-- **Anthropic Claude Code**: Mounted in `.claude/skills/` and documented in `CLAUDE.md`.
-- **Cursor IDE**: Configured via `.cursor/rules/disney-architect.mdc`.
-- **Windsurf IDE**: Configured via `.windsurfrules`.
-- **Cline / Roo Code**: Configured via `.clinerules`.
-- **Aider CLI**: Configured via `CONVENTIONS.md`.
-
----
-
 ## Repository Structure
 
 ```text
 disney-architect/
-├── SKILL.md                          # Master controller & state machine directives
+├── AGENTS.md                          # Open Multi-Agent Standard
+├── SKILL.md                          # Antigravity master controller & state machine directives
 ├── README.md                         # Project documentation
 ├── LICENSE                           # MIT License
 ├── CONTRIBUTING.md                   # Development & testing guide
-├── .github/workflows/ci.yml          # GitHub Actions CI matrix
+├── .github/
+│   ├── workflows/ci.yml              # GitHub Actions CI matrix
+│   └── copilot-instructions.md       # GitHub Copilot directives
+├── .devcontainer/devcontainer.json    # DevContainer sandbox environment
+├── .aider.conf.yml                    # Aider auto-load configuration
+├── .openhands_instructions            # OpenHands runner instructions
+├── .prompts/disney.prompt             # Continue.dev slash command
 ├── references/
 │   ├── 01-dreamer-protocol.md        # Visionary ideation protocol
 │   ├── 02-realist-protocol.md        # Pragmatic architecture & scaffold protocol
@@ -105,26 +130,10 @@ disney-architect/
 ├── examples/
 │   └── golden-sample.md              # End-to-end few-shot execution sample
 └── scripts/
+    ├── mcp_server.py                 # Zero-dependency Model Context Protocol stdio server
     ├── critic_linter.py              # Deterministic AST and syntax validator
     ├── install_harness.py            # Universal multi-agent configuration installer
     └── verify_scaffold.py            # Polyglot scaffold integrity auditor
-```
-
----
-
-## Usage Examples
-
-Trigger natural execution inside any supported agent:
-
-```text
-# Web Architecture
-"Architect a real-time collaborative whiteboard using the disney method."
-
-# CLI Utility (Interactive)
-"Rancang CLI disk analyzer di Rust pakai disney architect --interactive."
-
-# Systems Engineering
-"Plan and scaffold an in-memory key-value cache engine with disney architect."
 ```
 
 ---
