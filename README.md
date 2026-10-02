@@ -1,57 +1,134 @@
-# Disney Architect Skill
+# Disney Architect
 
-A polyglot, multi-stage software architecture and scaffolding framework for AI coding assistants (Google Antigravity, Anthropic Claude Code, Cursor, Windsurf, Cline, Aider), implementing the **Disney Creative Strategy** (Dreamer, Realist, Critic).
+[![CI](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://python.org)
+[![Agents Supported](https://img.shields.io/badge/Agents-Antigravity%20%7C%20Claude%20%7C%20Cursor%20%7C%20Cline%20%7C%20Aider-orange?style=flat-square)](#)
+
+A polyglot, multi-stage software architecture and scaffolding framework for AI coding assistants, implementing the **Disney Creative Strategy** (Robert Dilts) to bridge high-leverage product vision, pragmatic technical architecture, and adversarial reliability auditing.
 
 ---
 
-## Architectural Stages
+## The Workflow
 
-1. **The Dreamer (`<DREAMER_STAGE>`)**: Explores unconstrained product vision, core value propositions, and 3 killer differentiators without technical limitations.
-2. **The Realist (`<REALIST_STAGE>`)**: Prunes to a 48-hour MVP, auto-detects the domain archetype (Web, CLI, Systems, Mobile, Microservices), selects an idiomatic toolchain, outputs complete schemas, and scaffolds a runnable project tree including smoke tests.
-3. **The Critic (`<CRITIC_STAGE>`)**: Executes an adversarial security and reliability audit (OWASP, memory safety, data races, signal handling). Enforces a hard deterministic AST/syntax linter gate before authorizing code commits.
+```text
+[Raw User Concept / Issue / Feature Request]
+                     │
+                     ▼
+┌───────────────────────────────────────────────┐
+│ 1. THE DREAMER  (<DREAMER_STAGE>)             │
+│    - Unconstrained visionary thinking         │
+│    - Core value proposition & aha-moments     │
+│    - 3 killer competitive differentiators     │
+└───────────────────────────────────────────────┘
+                     │
+                     ▼
+┌───────────────────────────────────────────────┐
+│ 2. THE REALIST  (<REALIST_STAGE>)             │
+│    - Prunes scope to lean 48h MVP (Veto power)│
+│    - Auto-detects domain (Web/CLI/Sys/Mobile) │
+│    - Generates DB schemas & API contracts     │
+│    - Scaffolds runnable code & smoke tests    │
+└───────────────────────────────────────────────┘
+                     │
+                     ▼
+┌───────────────────────────────────────────────┐
+│ 3. THE CRITIC   (<CRITIC_STAGE>)              │
+│    - Adversarial security & OWASP audit       │
+│    - Performance, memory & failure modes      │
+│    - Deterministic AST & syntax linter gate   │
+└───────────────────────────────────────────────┘
+                     │
+          ┌──────────┴───────────────────────────────┐
+          ▼ [Score < 80 OR Syntax Error]             ▼ [Score >= 80 & Valid Syntax]
+┌───────────────────────────────┐          ┌───────────────────────────────┐
+│ REVISION LOOP (Max 2 Rounds)  │          │ VERIFIED RUNNABLE SCAFFOLD    │
+│ Realist fixes audit findings  │          │ Output: Codebase ready to run │
+└───────────────────────────────┘          └───────────────────────────────┘
+```
+
+---
+
+## Key Capabilities
+
+- **Zero-Hallucination Gatekeeper**: Enforces deterministic AST parsing (`python scripts/critic_linter.py`) before code authorization. Broken syntax automatically caps the audit score at `0/100`.
+- **Domain & Language Agnostic**: Dynamically calibrates to any domain (Web, CLI, Systems, Mobile, Microservices) and language (Rust, Go, Python, TypeScript, C++, Zig, Flutter).
+- **Model-Degradation Resistant**: Uses strict XML boundary delimiters (`<DREAMER_STAGE>`, `<REALIST_STAGE>`, `<CRITIC_STAGE>`) and few-shot golden examples to ensure reliable execution across both lightweight (7B/8B) and frontier (o1, Sonnet) models.
+- **Language Directive**: Converses dynamically in the user's natural language while keeping all technical artifacts, schemas, and source code strictly in standard English.
+- **TDD Baseline Mandate**: Every scaffolded project includes at least one runnable smoke test verifying startup and healthcheck endpoints.
 
 ---
 
 ## Execution Modes
 
-- **Autonomous Mode (`--auto` / Default)**: Continuous pipeline execution from raw user concept to verified runnable scaffold on disk.
-- **Interactive Mode (`--interactive`)**: Pauses after `<DREAMER_STAGE>` to align on killer features and scope before schema compilation.
+| Flag | Name | Behavior |
+| :--- | :--- | :--- |
+| *(default)* | **Autonomous** | Executes continuously from prompt to verified codebase without interruption. |
+| `--interactive` | **Human-in-the-Loop** | Pauses after Dreamer stage for user feedback on features before drafting architecture. |
 
 ---
 
-## Universal Multi-Agent Installation
+## Quick Start: Multi-Agent Installation
 
-Run the universal installer script to mount the skill across all installed agent CLIs and IDE rules simultaneously:
+Run the universal installer to mount the skill across your active agent environments in one command:
 
 ```bash
-python scripts/install_harness.py [optional_workspace_path]
+# Install to current workspace and global agent configuration
+python scripts/install_harness.py .
 ```
 
 ### Supported Environments
-- **Google Antigravity**: Configured in `~/.gemini/config/skills/disney-architect` and `.agents/skills/`.
-- **Claude Code**: Configured in `.claude/skills/` and referenced in `CLAUDE.md`.
-- **Cursor IDE**: Generates `.cursor/rules/disney-architect.mdc`.
-- **Windsurf IDE**: Appends to `.windsurfrules`.
-- **Cline / Roo Code**: Appends to `.clinerules`.
-- **Aider**: Appends to `CONVENTIONS.md`.
+- **Google Antigravity**: Mounted in `~/.gemini/config/skills/disney-architect` and `.agents/skills/`.
+- **Anthropic Claude Code**: Mounted in `.claude/skills/` and documented in `CLAUDE.md`.
+- **Cursor IDE**: Configured via `.cursor/rules/disney-architect.mdc`.
+- **Windsurf IDE**: Configured via `.windsurfrules`.
+- **Cline / Roo Code**: Configured via `.clinerules`.
+- **Aider CLI**: Configured via `CONVENTIONS.md`.
 
 ---
 
-## Verification & Tooling
+## Repository Structure
 
-```bash
-# Run deterministic syntax/AST audit across generated source code
-python scripts/critic_linter.py <target_directory>
-
-# Verify polyglot build manifest and scaffold completeness
-python scripts/verify_scaffold.py <target_directory>
+```text
+disney-architect/
+├── SKILL.md                          # Master controller & state machine directives
+├── README.md                         # Project documentation
+├── LICENSE                           # MIT License
+├── CONTRIBUTING.md                   # Development & testing guide
+├── .github/workflows/ci.yml          # GitHub Actions CI matrix
+├── references/
+│   ├── 01-dreamer-protocol.md        # Visionary ideation protocol
+│   ├── 02-realist-protocol.md        # Pragmatic architecture & scaffold protocol
+│   ├── 03-critic-protocol.md         # Adversarial audit & scoring protocol
+│   └── templates/
+│       └── disney-spec-template.md   # Consolidated architecture document template
+├── examples/
+│   └── golden-sample.md              # End-to-end few-shot execution sample
+└── scripts/
+    ├── critic_linter.py              # Deterministic AST and syntax validator
+    ├── install_harness.py            # Universal multi-agent configuration installer
+    └── verify_scaffold.py            # Polyglot scaffold integrity auditor
 ```
 
 ---
 
-## Trigger Examples
+## Usage Examples
 
-Invoke naturally in any supported language:
-- *"Architect a real-time collaborative canvas using the disney method."*
-- *"Rancang CLI file vault di Rust pakai disney architect --interactive."*
-- *"Plan and scaffold a distributed task queue with disney architect."*
+Trigger natural execution inside any supported agent:
+
+```text
+# Web Architecture
+"Architect a real-time collaborative whiteboard using the disney method."
+
+# CLI Utility (Interactive)
+"Rancang CLI disk analyzer di Rust pakai disney architect --interactive."
+
+# Systems Engineering
+"Plan and scaffold an in-memory key-value cache engine with disney architect."
+```
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
