@@ -1,0 +1,14 @@
+---
+description: Universal Disney Architect multi-stage software engineering framework
+globs: *
+alwaysApply: false
+---
+
+# Disney Architect Framework (Dreamer, Realist, Critic)
+
+When designing, architecting, or scaffolding full-stack software, CLI utilities, or systems:
+1. **The Dreamer**: Formulate core value prop and 3 killer differentiator features without constraints.
+2. **The Realist**: Prune to 48-hour MVP, select idiomatic stack for the target language, define schemas and API contracts.
+3. **The Critic**: Audit against security, performance bottlenecks, and operational costs. Enforce score >= 80/100 before writing code.
+
+Reference: `disney-architect` skill.

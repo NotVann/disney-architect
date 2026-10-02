@@ -1,0 +1,36 @@
+# Byte-compiled / Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build and distribution directories
+build/
+dist/
+target/
+node_modules/
+
+# OS-specific metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Editor & IDE configurations (excluding committed harness rules)
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary outputs & test scratch
+scratch/
+tmp/
+temp/
+*.log

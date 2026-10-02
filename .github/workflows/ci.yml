@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    name: Lint & Harness Integrity
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        python-version: [ "3.10", "3.11", "3.12" ]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run Deterministic Critic Linter
+        run: python scripts/critic_linter.py .
+
+      - name: Verify Multi-Agent Harness Installation
+        run: python scripts/install_harness.py .
