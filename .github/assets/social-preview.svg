@@ -25,11 +25,47 @@
   <text x="640" y="128" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="44" font-weight="800" text-anchor="middle" letter-spacing="-1.2">DISNEY ARCHITECT</text>
   <text x="640" y="162" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="400" text-anchor="middle" letter-spacing="-0.2">Universal Multi-Stage Software Architecture &amp; Scaffolding Framework</text>
 
-  <!-- Structural Pipeline Connectors -->
-  <path d="M 420 335 L 460 335" stroke="#27272a" stroke-width="1.5"/>
-  <polygon points="465,335 457,331 457,339" fill="#3f3f46"/>
-  <path d="M 820 335 L 860 335" stroke="#27272a" stroke-width="1.5"/>
-  <polygon points="865,335 857,331 857,339" fill="#3f3f46"/>
+  <!-- Structural Pipeline Connectors (High-Precision Architectural Bus) -->
+  
+  <!-- CONNECTOR 01: DREAMER -> REALIST (X: 420 to 470) -->
+  <g id="connector-01">
+    <!-- Micro Sockets -->
+    <circle cx="420" cy="335" r="3" fill="#18181b" stroke="#3f3f46" stroke-width="1.2"/>
+    <circle cx="420" cy="335" r="1" fill="#71717a"/>
+    <circle cx="470" cy="335" r="3" fill="#18181b" stroke="#3f3f46" stroke-width="1.2"/>
+    
+    <!-- Data Track & Stream Line -->
+    <line x1="423" y1="335" x2="455" y2="335" stroke="#27272a" stroke-width="2"/>
+    <line x1="424" y1="335" x2="454" y2="335" stroke="#52525b" stroke-width="1" stroke-dasharray="3 2"/>
+    
+    <!-- Precision Dual Chevrons -->
+    <path d="M 455 330 L 460 335 L 455 340" stroke="#52525b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M 461 330 L 466 335 L 461 340" stroke="#e4e4e7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- Architectural Stage Tag -->
+    <rect x="430" y="315" width="30" height="13" rx="3" fill="#121215" stroke="#27272a" stroke-width="1"/>
+    <text x="445" y="324.5" fill="#a1a1aa" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">SPEC</text>
+  </g>
+
+  <!-- CONNECTOR 02: REALIST -> CRITIC (X: 810 to 860) -->
+  <g id="connector-02">
+    <!-- Micro Sockets -->
+    <circle cx="810" cy="335" r="3" fill="#18181b" stroke="#3f3f46" stroke-width="1.2"/>
+    <circle cx="810" cy="335" r="1" fill="#71717a"/>
+    <circle cx="860" cy="335" r="3" fill="#18181b" stroke="#3f3f46" stroke-width="1.2"/>
+    
+    <!-- Data Track & Stream Line -->
+    <line x1="813" y1="335" x2="845" y2="335" stroke="#27272a" stroke-width="2"/>
+    <line x1="814" y1="335" x2="844" y2="335" stroke="#52525b" stroke-width="1" stroke-dasharray="3 2"/>
+    
+    <!-- Precision Dual Chevrons -->
+    <path d="M 845 330 L 850 335 L 845 340" stroke="#52525b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M 851 330 L 856 335 L 851 340" stroke="#e4e4e7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    
+    <!-- Architectural Stage Tag -->
+    <rect x="820" y="315" width="30" height="13" rx="3" fill="#121215" stroke="#27272a" stroke-width="1"/>
+    <text x="835" y="324.5" fill="#a1a1aa" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">CODE</text>
+  </g>
 
   <!-- 3 Minimalist Engineering Cards -->
 
