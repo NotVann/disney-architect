@@ -1,5 +1,7 @@
 # Disney Architect
 
+![Disney Architect](.github/assets/social-preview.svg)
+
 [![CI](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://python.org)
