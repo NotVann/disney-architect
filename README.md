@@ -10,6 +10,23 @@ A polyglot, multi-stage software architecture and scaffolding framework for AI c
 
 ---
 
+## ⚡ Quick Start
+
+Install instantly to any AI coding assistant (Cursor, Claude Code, Antigravity, Windsurf, Cline) via `npx skills`:
+
+```bash
+# Install to current project
+npx skills add NotVann/disney-architect
+
+# Or install globally across all workspaces
+npx skills add NotVann/disney-architect -g
+```
+
+Then simply prompt your AI assistant:
+> *"Architect a real-time collaborative whiteboard using the disney method."*
+
+---
+
 ## The Workflow
 
 ```text
@@ -60,28 +77,28 @@ A polyglot, multi-stage software architecture and scaffolding framework for AI c
 | **Open Standards** | Autonomous Frameworks, SWE-agent | `AGENTS.md` |
 | **Sandboxes** | Devin, GitHub Codespaces | `.devcontainer/devcontainer.json` |
 
----
+## Installation Options
 
-## Quick Start: Installation via `npx skills` (Recommended)
+### Option 1: Via `npx skills` (Recommended)
 
-The easiest way to install Disney Architect across any AI agent (Claude Code, Cursor, Antigravity, Windsurf) is via the official **`skills`** CLI:
+Install across any supported agent with zero clone required:
 
 ```bash
-# Install to current project workspace
+# Project-level install
 npx skills add NotVann/disney-architect
 
-# Or install globally across all projects on your machine
+# Global-level install (all workspaces)
 npx skills add NotVann/disney-architect -g
 
-# Install to all detected agents non-interactively
+# Non-interactive install to all detected agents
 npx skills add NotVann/disney-architect --all
 ```
 
 ---
 
-## Alternative: Python Universal Installer
+### Option 2: Via Python Universal Installer
 
-If you prefer using Python directly:
+If you prefer installing from local source or automated CI scripts:
 
 ```bash
 python scripts/install_harness.py .
