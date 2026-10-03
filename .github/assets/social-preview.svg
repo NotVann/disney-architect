@@ -1,198 +1,115 @@
 <svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070a13"/>
-      <stop offset="40%" stop-color="#0b1329"/>
-      <stop offset="70%" stop-color="#080e1e"/>
-      <stop offset="100%" stop-color="#03050a"/>
-    </linearGradient>
-
-    <!-- Ambient Glow Filters -->
-    <radialGradient id="purple-glow" cx="20%" cy="15%" r="45%">
-      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#9333ea" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="blue-glow" cx="50%" cy="40%" r="50%">
-      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="red-glow" cx="85%" cy="20%" r="45%">
-      <stop offset="0%" stop-color="#dc2626" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#dc2626" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Card Gradients -->
-    <linearGradient id="dreamer-border" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="50%" stop-color="#7e22ce" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#3b0764" stop-opacity="0.1"/>
-    </linearGradient>
-    <linearGradient id="realist-border" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#60a5fa"/>
-      <stop offset="50%" stop-color="#1d4ed8" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#172554" stop-opacity="0.1"/>
-    </linearGradient>
-    <linearGradient id="critic-border" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f87171"/>
-      <stop offset="50%" stop-color="#b91c1c" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#450a0a" stop-opacity="0.1"/>
-    </linearGradient>
-
-    <!-- Glass Surfaces -->
-    <linearGradient id="card-surface" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.75"/>
-    </linearGradient>
-    
-    <!-- Title Text Gradient -->
-    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="50%" stop-color="#f1f5f9"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
-    </linearGradient>
-
-    <!-- Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-opacity="0.15" stroke-width="1"/>
+    <!-- Background Grid -->
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#18181b" stroke-width="1"/>
     </pattern>
 
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
-    </filter>
+    <linearGradient id="card-border" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3f3f46"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
   </defs>
 
-  <!-- Background Layer -->
-  <rect width="1280" height="640" fill="url(#bg-grad)"/>
-  <rect width="1280" height="640" fill="url(#purple-glow)"/>
-  <rect width="1280" height="640" fill="url(#blue-glow)"/>
-  <rect width="1280" height="640" fill="url(#red-glow)"/>
+  <!-- Solid Dark Matte Canvas -->
+  <rect width="1280" height="640" fill="#09090b"/>
   <rect width="1280" height="640" fill="url(#grid)"/>
 
-  <!-- Top Pill Badge -->
-  <g transform="translate(460, 42)">
-    <rect width="360" height="32" rx="16" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1"/>
-    <circle cx="22" cy="16" r="4" fill="#38bdf8">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="36" y="21" fill="#bae6fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" letter-spacing="2">DISNEY CREATIVE STRATEGY FOR AI</text>
+  <!-- Minimalist Header Pill -->
+  <g transform="translate(500, 48)">
+    <rect width="280" height="28" rx="6" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="140" y="18" fill="#a1a1aa" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.5">DISNEY CREATIVE STRATEGY</text>
   </g>
 
-  <!-- Title & Tagline -->
-  <text x="640" y="132" fill="url(#title-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="900" text-anchor="middle" letter-spacing="-1.5">DISNEY ARCHITECT</text>
-  <text x="640" y="172" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" text-anchor="middle" letter-spacing="0.2">Universal Multi-Stage Software Architecture &amp; Scaffolding Framework</text>
+  <!-- Typography: Architectural & Solid -->
+  <text x="640" y="128" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="44" font-weight="800" text-anchor="middle" letter-spacing="-1.2">DISNEY ARCHITECT</text>
+  <text x="640" y="162" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="400" text-anchor="middle" letter-spacing="-0.2">Universal Multi-Stage Software Architecture &amp; Scaffolding Framework</text>
 
-  <!-- Connective Pipeline Line -->
-  <path d="M 410 350 L 460 350" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
-  <polygon points="465,350 455,345 455,355" fill="#64748b"/>
-  <path d="M 810 350 L 860 350" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
-  <polygon points="865,350 855,345 855,355" fill="#64748b"/>
+  <!-- Structural Pipeline Connectors -->
+  <path d="M 420 335 L 460 335" stroke="#27272a" stroke-width="1.5"/>
+  <polygon points="465,335 457,331 457,339" fill="#3f3f46"/>
+  <path d="M 820 335 L 860 335" stroke="#27272a" stroke-width="1.5"/>
+  <polygon points="865,335 857,331 857,339" fill="#3f3f46"/>
 
-  <!-- 3 Stage Cards -->
+  <!-- 3 Minimalist Engineering Cards -->
 
-  <!-- CARD 1: THE DREAMER -->
-  <g transform="translate(70, 220)" filter="url(#shadow)">
-    <rect width="340" height="255" rx="16" fill="url(#card-surface)"/>
-    <rect width="340" height="255" rx="16" fill="none" stroke="url(#dreamer-border)" stroke-width="1.5"/>
+  <!-- CARD 01: THE DREAMER -->
+  <g transform="translate(80, 210)">
+    <rect width="340" height="250" rx="8" fill="#0c0c0e"/>
+    <rect width="340" height="250" rx="8" fill="none" stroke="url(#card-border)" stroke-width="1"/>
     
-    <!-- Stage Header -->
-    <rect x="20" y="20" width="42" height="42" rx="10" fill="#7e22ce" fill-opacity="0.25" stroke="#a855f7" stroke-opacity="0.4"/>
-    <text x="41" y="46" fill="#d8b4fe" font-size="18" text-anchor="middle">✦</text>
-    
-    <text x="74" y="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700">The Dreamer</text>
-    <rect x="74" y="47" width="125" height="18" rx="4" fill="#581c87" fill-opacity="0.5"/>
-    <text x="80" y="60" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">&lt;DREAMER_STAGE&gt;</text>
+    <!-- Header -->
+    <text x="24" y="38" fill="#52525b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1">STAGE 01</text>
+    <text x="24" y="66" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="19" font-weight="700">The Dreamer</text>
+    <rect x="238" y="24" width="78" height="20" rx="4" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="277" y="38" fill="#a1a1aa" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">VISION</text>
 
-    <!-- Bullet Points -->
-    <line x1="20" y1="82" x2="320" y2="82" stroke="#334155" stroke-opacity="0.5"/>
-    
-    <circle cx="28" cy="115" r="3" fill="#a855f7"/>
-    <text x="40" y="119" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Unconstrained Vision</text>
-    <text x="40" y="137" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Abaikan limitasi biaya &amp; teknis</text>
+    <line x1="24" y1="84" x2="316" y2="84" stroke="#18181b" stroke-width="1"/>
 
-    <circle cx="28" cy="165" r="3" fill="#a855f7"/>
-    <text x="40" y="169" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">3 Killer Differentiators</text>
-    <text x="40" y="187" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Fitur 10x lebih memikat &amp; viral loop</text>
+    <!-- Content Items -->
+    <text x="24" y="118" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Unconstrained Scope</text>
+    <text x="24" y="136" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Ignore infrastructure limits &amp; budget</text>
 
-    <circle cx="28" cy="215" r="3" fill="#a855f7"/>
-    <text x="40" y="219" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Aha-Moment User Flow</text>
-    <text x="40" y="237" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Fokus delight &amp; user experience</text>
+    <text x="24" y="168" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">3 Killer Differentiators</text>
+    <text x="24" y="186" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">10x high-leverage product capabilities</text>
+
+    <text x="24" y="218" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">User Value Journey</text>
+    <text x="24" y="236" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">First contact to retention aha-moment</text>
   </g>
 
-  <!-- CARD 2: THE REALIST -->
-  <g transform="translate(470, 220)" filter="url(#shadow)">
-    <rect width="340" height="255" rx="16" fill="url(#card-surface)"/>
-    <rect width="340" height="255" rx="16" fill="none" stroke="url(#realist-border)" stroke-width="1.5"/>
+  <!-- CARD 02: THE REALIST -->
+  <g transform="translate(470, 210)">
+    <rect width="340" height="250" rx="8" fill="#0c0c0e"/>
+    <rect width="340" height="250" rx="8" fill="none" stroke="url(#card-border)" stroke-width="1"/>
     
-    <!-- Stage Header -->
-    <rect x="20" y="20" width="42" height="42" rx="10" fill="#1d4ed8" fill-opacity="0.25" stroke="#3b82f6" stroke-opacity="0.4"/>
-    <text x="41" y="46" fill="#93c5fd" font-size="18" text-anchor="middle">⚙</text>
-    
-    <text x="74" y="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700">The Realist</text>
-    <rect x="74" y="47" width="125" height="18" rx="4" fill="#1e3a8a" fill-opacity="0.5"/>
-    <text x="80" y="60" fill="#60a5fa" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">&lt;REALIST_STAGE&gt;</text>
+    <!-- Header -->
+    <text x="24" y="38" fill="#52525b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1">STAGE 02</text>
+    <text x="24" y="66" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="19" font-weight="700">The Realist</text>
+    <rect x="238" y="24" width="78" height="20" rx="4" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="277" y="38" fill="#a1a1aa" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">ARCH</text>
 
-    <!-- Bullet Points -->
-    <line x1="20" y1="82" x2="320" y2="82" stroke="#334155" stroke-opacity="0.5"/>
+    <line x1="24" y1="84" x2="316" y2="84" stroke="#18181b" stroke-width="1"/>
 
-    <circle cx="28" cy="115" r="3" fill="#3b82f6"/>
-    <text x="40" y="119" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Prune ke 48-Hour MVP</text>
-    <text x="40" y="137" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Hak veto: pangkas fitur non-esensial</text>
+    <!-- Content Items -->
+    <text x="24" y="118" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Prune to 48-Hour MVP</text>
+    <text x="24" y="136" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Veto authority: strip non-essential scope</text>
 
-    <circle cx="28" cy="165" r="3" fill="#3b82f6"/>
-    <text x="40" y="169" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Polyglot Architecture</text>
-    <text x="40" y="187" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Stack optimal, schema DB &amp; API spec</text>
+    <text x="24" y="168" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Polyglot Architecture</text>
+    <text x="24" y="186" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Domain stack, DDL schemas &amp; API specs</text>
 
-    <circle cx="28" cy="215" r="3" fill="#3b82f6"/>
-    <text x="40" y="219" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Scaffold &amp; Smoke Test</text>
-    <text x="40" y="237" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">File fisik runnable + test baseline</text>
+    <text x="24" y="218" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Scaffold Baseline &amp; Tests</text>
+    <text x="24" y="236" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Executable code tree with smoke tests</text>
   </g>
 
-  <!-- CARD 3: THE CRITIC -->
-  <g transform="translate(870, 220)" filter="url(#shadow)">
-    <rect width="340" height="255" rx="16" fill="url(#card-surface)"/>
-    <rect width="340" height="255" rx="16" fill="none" stroke="url(#critic-border)" stroke-width="1.5"/>
+  <!-- CARD 03: THE CRITIC -->
+  <g transform="translate(860, 210)">
+    <rect width="340" height="250" rx="8" fill="#0c0c0e"/>
+    <rect width="340" height="250" rx="8" fill="none" stroke="url(#card-border)" stroke-width="1"/>
     
-    <!-- Stage Header -->
-    <rect x="20" y="20" width="42" height="42" rx="10" fill="#b91c1c" fill-opacity="0.25" stroke="#ef4444" stroke-opacity="0.4"/>
-    <text x="41" y="46" fill="#fca5a5" font-size="18" text-anchor="middle">🛡</text>
-    
-    <text x="74" y="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700">The Critic</text>
-    <rect x="74" y="47" width="120" height="18" rx="4" fill="#7f1d1d" fill-opacity="0.5"/>
-    <text x="80" y="60" fill="#f87171" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">&lt;CRITIC_STAGE&gt;</text>
+    <!-- Header -->
+    <text x="24" y="38" fill="#52525b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1">STAGE 03</text>
+    <text x="24" y="66" fill="#fafafa" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="19" font-weight="700">The Critic</text>
+    <rect x="238" y="24" width="78" height="20" rx="4" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="277" y="38" fill="#a1a1aa" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">AUDIT</text>
 
-    <!-- Bullet Points -->
-    <line x1="20" y1="82" x2="320" y2="82" stroke="#334155" stroke-opacity="0.5"/>
+    <line x1="24" y1="84" x2="316" y2="84" stroke="#18181b" stroke-width="1"/>
 
-    <circle cx="28" cy="115" r="3" fill="#ef4444"/>
-    <text x="40" y="119" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Adversarial OWASP Audit</text>
-    <text x="40" y="137" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Uji security, data race, &amp; bottleneck</text>
+    <!-- Content Items -->
+    <text x="24" y="118" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Adversarial OWASP Audit</text>
+    <text x="24" y="136" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Threat models, data races &amp; memory safety</text>
 
-    <circle cx="28" cy="165" r="3" fill="#ef4444"/>
-    <text x="40" y="169" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Deterministic Linter Gate</text>
-    <text x="40" y="187" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Hard parser AST: Anti-halusinasi skor</text>
+    <text x="24" y="168" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Deterministic Linter Gate</text>
+    <text x="24" y="186" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Hard AST parser prevents hallucinated scores</text>
 
-    <circle cx="28" cy="215" r="3" fill="#ef4444"/>
-    <text x="40" y="219" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="500">Passing Grade Threshold</text>
-    <text x="40" y="237" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Wajib skor ≥ 80 sebelum write ke disk</text>
+    <text x="24" y="218" fill="#e4e4e7" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13.5" font-weight="600">Strict Quality Gate</text>
+    <text x="24" y="236" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12">Requires score ≥ 80 to authorize commits</text>
   </g>
 
-  <!-- Bottom Command Terminal Pill -->
-  <g transform="translate(340, 525)" filter="url(#shadow)">
-    <rect width="600" height="58" rx="29" fill="#090d16" stroke="#1e293b" stroke-width="1.5"/>
-    <rect x="2" y="2" width="596" height="54" rx="27" fill="none" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1"/>
-    
-    <!-- Terminal Dot Icons -->
-    <circle cx="32" cy="29" r="5" fill="#ef4444" fill-opacity="0.8"/>
-    <circle cx="48" cy="29" r="5" fill="#f59e0b" fill-opacity="0.8"/>
-    <circle cx="64" cy="29" r="5" fill="#10b981" fill-opacity="0.8"/>
-
-    <!-- Terminal Text -->
-    <text x="96" y="34" fill="#38bdf8" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="15" font-weight="700">$</text>
-    <text x="116" y="34" fill="#f8fafc" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="15" font-weight="600">npx skills add NotVann/disney-architect</text>
-    <rect x="495" y="20" width="8" height="18" fill="#38bdf8">
-      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
-    </rect>
+  <!-- Minimalist Terminal Pill -->
+  <g transform="translate(365, 520)">
+    <rect width="550" height="48" rx="8" fill="#0c0c0e" stroke="#27272a" stroke-width="1"/>
+    <text x="32" y="30" fill="#52525b" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500">$</text>
+    <text x="52" y="30" fill="#fafafa" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500">npx skills add NotVann/disney-architect</text>
+    <text x="490" y="30" fill="#52525b" font-family="'JetBrains Mono', monospace" font-size="11">↵</text>
   </g>
-
 </svg>
