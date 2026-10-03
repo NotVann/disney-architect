@@ -2,6 +2,7 @@
 
 ![Disney Architect](.github/assets/social-preview.svg)
 
+[![skills.sh](https://skills.sh/b/NotVann/disney-architect)](https://skills.sh/NotVann/disney-architect)
 [![CI](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://python.org)
