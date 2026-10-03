@@ -62,9 +62,26 @@ A polyglot, multi-stage software architecture and scaffolding framework for AI c
 
 ---
 
-## Quick Start: Universal Installation
+## Quick Start: Installation via `npx skills` (Recommended)
 
-Run the universal installer to mount the skill across your active agent environments in one command:
+The easiest way to install Disney Architect across any AI agent (Claude Code, Cursor, Antigravity, Windsurf) is via the official **`skills`** CLI:
+
+```bash
+# Install to current project workspace
+npx skills add NotVann/disney-architect
+
+# Or install globally across all projects on your machine
+npx skills add NotVann/disney-architect -g
+
+# Install to all detected agents non-interactively
+npx skills add NotVann/disney-architect --all
+```
+
+---
+
+## Alternative: Python Universal Installer
+
+If you prefer using Python directly:
 
 ```bash
 python scripts/install_harness.py .
